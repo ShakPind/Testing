@@ -14,9 +14,9 @@ const Message = () => {
     return <p>this is my message</p>;
 };
 
-//const Greeting = () => {
-//  return React.createElement('h2', {}, 'hello world');
-//};
+const Greetings = () => {
+  return React.createElement('h2', {}, 'hello world');
+};
 
 
 //function Greeting() {
