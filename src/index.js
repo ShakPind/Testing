@@ -1,32 +1,46 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-function Greeting() {
-    return (
-        <div>
-            <h2>john doe</h2>
-            <p>this is my message</p>
-    </div>
-    );
+import './index.css';
+const author = 'WOW';
+const title = "Meh";
+const img =
+  "https://images-na.ssl-images-amazon.com/images/I/81yfsIOijJL._AC_UL600_SR600,400_.jpg";
+
+function BookList() {
+  return (
+    <section className='booklist'>
+          <Book author={author} title={title} img={img} />
+      <Book />
+      <Book />
+      <Book />
+    </section>
+  );
 }
-const Person = () => <h2>john doe</h2>;
-const Message = () => {
-    return <p>this is my message</p>;
+
+const Book = (props) => {
+    console.log(props);
+  return (
+    <article className="book">
+      <img src="https://images-na.ssl-images-amazon.com/images/I/81yfsIOijJL._AC_UL600_SR600,400_.jpg"></img>
+      <h2>{title}</h2>
+      <h4>{author.toUpperCase}</h4>
+          {/*<p>{let x = 6}</p>*/}
+      
+    </article>
+  );
 };
 
-const Greetings = () => {
-  return React.createElement('h2', {}, 'hello world');
+const Image = () => (
+    <img
+        src='https://images-na.ssl-images-amazon.com/images/I/81yfsIOijJL._AC_UL600_SR600,400_.jpg'
+    alt='Things'/>
+);
+const Title = () => {
+  return <h2>Book Title</h2>;
 };
+const Author = () => <h4>Author</h4>;
 
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
-//function Greeting() {
-//  return (
-//    <div>
-//      <h2>hello world</h2>
-//    </div>
-//  );
-//}
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-
-root.render(<Greeting />);
+root.render(<BookList />);
