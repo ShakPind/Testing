@@ -2,30 +2,43 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 import './index.css';
-const author = 'WOW';
-const title = "Meh";
-const img =
-  "https://images-na.ssl-images-amazon.com/images/I/81yfsIOijJL._AC_UL600_SR600,400_.jpg";
+const firstBook = {
+  author: "Jordan Moore",
+  title: "Interesting Facts For Curious Minds",
+  img: "https://images-na.ssl-images-amazon.com/images/I/81yfsIOijJL._AC_UL600_SR600,400_.jpg",
+};
+const secondBook = {
+  author: 'James Clear',
+  title: 'Atomic Habits',
+  img: "https://i.scdn.co/image/ab67616d0000b2735d02af8588949bf7ee2f0a08",
+};
 
 function BookList() {
   return (
-    <section className='booklist'>
-          <Book author={author} title={title} img={img} />
-      <Book />
-      <Book />
+    <section className="booklist">
+      <Book
+        author={firstBook.author}
+        title={firstBook.title}
+        img={firstBook.img}
+      />
+      <Book
+        author={secondBook.author}
+        title={secondBook.title}
+        img={secondBook.img}
+      />
       <Book />
     </section>
   );
 }
 
 const Book = (props) => {
-    console.log(props);
+  console.log(props);
   return (
-    <article className="book">
-      <img src="https://images-na.ssl-images-amazon.com/images/I/81yfsIOijJL._AC_UL600_SR600,400_.jpg"></img>
-      <h2>{title}</h2>
-      <h4>{author.toUpperCase}</h4>
-          {/*<p>{let x = 6}</p>*/}
+    <article className='book'>
+      <img src={props.img}></img>
+      <h2>{props.title}</h2>
+      <h4>{props.author}</h4>
+      {/*<p>{let x = 6}</p>*/}
       
     </article>
   );
